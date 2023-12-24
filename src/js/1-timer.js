@@ -1,11 +1,10 @@
-import flatpickr from "flatpickr";
-import "flatpickr/dist/flatpickr.min.css";
+import flatpickr from 'flatpickr';
+import 'flatpickr/dist/flatpickr.min.css';
 import iziToast from 'izitoast';
 import 'izitoast/dist/css/iziToast.min.css';
 
 iziToast.settings({
-  position: 'topRight', 
-  
+  position: 'topRight',
 });
 
 let userSelectedDate;
@@ -26,22 +25,22 @@ const options = {
     if (userSelectedDate <= currentDate) {
       startButton.setAttribute('disabled', 'true');
       iziToast.show({
-     title: 'Error',
-  message: 'Please choose a date in the future',
-  backgroundColor: '#EF4040', 
-  titleColor: '#FFFFFF', 
-  messageColor: '#FFFFFF', 
-  progressBarColor: '#FFBEBE', 
-  close: false, 
-  progressBar: true,
-    });
+        title: 'Error',
+        message: 'Please choose a date in the future',
+        backgroundColor: '#EF4040',
+        titleColor: '#FFFFFF',
+        messageColor: '#FFFFFF',
+        progressBarColor: '#FFBEBE',
+        close: false,
+        progressBar: true,
+      });
     } else {
       startButton.removeAttribute('disabled');
     }
   },
 };
 
-const fp = flatpickr("#datetime-picker", options);
+const fp = flatpickr('#datetime-picker', options);
 
 function startCountdown() {
   const countdownInterval = setInterval(() => {
